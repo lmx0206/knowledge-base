@@ -1,0 +1,16 @@
+{
+  "features": [
+    {
+      "id": "F001",
+      "name": "示例功能",
+      "status": "done",
+      "tests": "test/features/example_test.dart"
+    },
+    {
+      "id": "F002",
+      "name": "新功能",
+      "status": "not-started",
+      "tests": null
+    }
+  ]
+}
