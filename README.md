@@ -7,6 +7,11 @@
 
 ```
 knowledge-base/
+├── ghostty/                 ← Ghostty 终端使用指南
+│   ├── README.md            概述
+│   ├── shortcuts.md         完整快捷键参考（macOS）
+│   ├── config-guide.md      配置文件详解
+│   └── tips-and-tricks.md   技巧与进阶用法
 └── ai-engineering/
     ├── 01-overview/              总览：AI 工程三大演变
     ├── 02-prompt-engineering/    提示词工程详解
@@ -36,6 +41,9 @@ knowledge-base/
 
 | 我想... | 去看 |
 |---------|------|
+| 学习 Ghostty 终端 | ghostty/ |
+| 查 Ghostty 快捷键 | ghostty/shortcuts.md |
+| 配置 Ghostty | ghostty/config-guide.md |
 | 了解三个工程是什么 | 01-overview/ |
 | 学习提示词工程 | 02-prompt-engineering/ |
 | 学习上下文工程 | 03-context-engineering/ |
