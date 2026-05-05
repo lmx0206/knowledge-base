@@ -8,6 +8,8 @@
 
 ```
 knowledge-base/
+├── cloud-deployment/        ← 免费云服务器部署指南
+│   └── README.md            Oracle Cloud + Hermes Agent 部署
 ├── superpowers/             ← Superpowers 技能框架
 │   └── README.md            安装、工作流、技能库、设计哲学
 ├── openspec/                ← OpenSpec 规格驱动开发
@@ -42,6 +44,7 @@ knowledge-base/
 
 | 我想... | 去看 |
 |---------|------|
+| 免费部署 Hermes Agent 到云服务器 | cloud-deployment/ |
 | 安装 Superpowers | superpowers/ |
 | 使用 OpenSpec 做规格驱动开发 | openspec/ |
 | 学习 Claude Code | claude-code/ |
