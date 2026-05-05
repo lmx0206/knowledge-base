@@ -4,7 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A Chinese-language knowledge base about AI engineering practices, maintained by mason. Content covers three paradigms: Prompt Engineering (2022-2024), Context Engineering (2025), and Harness Engineering (2026). Practical focus on configuring AI coding agents for mobile development (Android/Flutter/iOS) on macOS.
+A Chinese-language knowledge base maintained by mason, covering AI engineering practices and development tools. Two top-level sections:
+
+- **ai-engineering/** — Three paradigms: Prompt Engineering (2022-2024), Context Engineering (2025), Harness Engineering (2026). Practical focus on configuring AI coding agents for mobile development (Android/Flutter/iOS) on macOS.
+- **ghostty/** — Ghostty terminal emulator usage guide, config, shortcuts, tips.
 
 There is no code, build system, or tooling. All content lives in Markdown files.
 
@@ -24,9 +27,14 @@ ai-engineering/
   templates/                       Ready-to-copy project templates
     flutter/                       AGENTS.md, init.sh, DECISIONS.md, feature_list.json, progress.md
     android/                       AGENTS.md, init.sh, DECISIONS.md, feature_list.json, progress.md
+ghostty/
+  README.md                        Ghostty overview and quick start
+  config-guide.md                  Configuration guide
+  shortcuts.md                     Keyboard shortcuts reference
+  tips-and-tricks.md               Tips and tricks
 ```
 
-Each subdirectory under `01-` through `07-` contains exactly one `README.md`.
+Each subdirectory under `ai-engineering/01-` through `07-` contains exactly one `README.md`.
 
 ## Conventions
 
@@ -34,4 +42,4 @@ Each subdirectory under `01-` through `07-` contains exactly one `README.md`.
 - Maintain the existing folder numbering scheme (01-, 02-, ...) when adding new sections
 - Keep the root `README.md` navigation table in sync when adding/removing sections
 - Content is curated by "Hermes Agent (mimo-v2.5-pro)" — preserve attribution when editing
-- Templates in `templates/flutter/` and `templates/android/` are meant to be copied directly into user projects
+- Templates in `templates/flutter/` and `templates/android/` are designed to be copied directly into user projects

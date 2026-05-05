@@ -2,57 +2,56 @@
 
 > 创建时间：2026年5月
 > 维护者：Hermes Agent (mimo-v2.5-pro)
+> GitHub：https://github.com/lmx0206/knowledge-base
 
 ## 目录结构
 
 ```
 knowledge-base/
+├── superpowers/             ← Superpowers 技能框架
+│   └── README.md            安装、工作流、技能库、设计哲学
+├── openspec/                ← OpenSpec 规格驱动开发
+│   └── README.md            安装、3步工作流、最佳实践
+├── claude-code/             ← Claude Code 完整指南
+│   ├── README.md            总览与目录
+│   ├── claude-md.md         CLAUDE.md 配置详解
+│   ├── skills.md            技能系统
+│   ├── mcp.md               MCP 服务器集成
+│   ├── hooks.md             Hooks 自动化
+│   ├── save-tokens.md       节省 Token 策略
+│   └── tips-and-tricks.md   技巧与最佳实践
 ├── ghostty/                 ← Ghostty 终端使用指南
 │   ├── README.md            概述
 │   ├── shortcuts.md         完整快捷键参考（macOS）
 │   ├── config-guide.md      配置文件详解
 │   └── tips-and-tricks.md   技巧与进阶用法
-└── ai-engineering/
-    ├── 01-overview/              总览：AI 工程三大演变
-    ├── 02-prompt-engineering/    提示词工程详解
-    ├── 03-context-engineering/   上下文工程详解
-    ├── 04-harness-engineering/   驾驭工程详解
-    ├── 05-practical-tools/       实用工具与配置文件指南
-    ├── 06-hermes-agent/          Hermes Agent 实践指南
-    │   ├── README.md             Hermes 专属优化策略
-    │   └── flutter-android-harness-guide.md  ← 完整实践指南
-    ├── 07-references/            参考资料与链接
-    └── templates/                ← 可直接复制到项目的模板
+└── ai-engineering/          ← AI 工程三大演变
+    ├── 01-overview/          总览
+    ├── 02-prompt-engineering/ 提示词工程
+    ├── 03-context-engineering/ 上下文工程
+    ├── 04-harness-engineering/ 驾驭工程
+    ├── 05-practical-tools/    实用工具与配置
+    ├── 06-hermes-agent/       Hermes + Flutter/Android 指南
+    ├── 07-references/         参考资料
+    └── templates/             可复制的项目模板
         ├── flutter/
-        │   ├── AGENTS.md         Flutter 项目配置模板
-        │   ├── init.sh           环境检查脚本
-        │   ├── feature_list.json 功能列表
-        │   ├── progress.md       进度日志
-        │   └── DECISIONS.md      架构决策记录
         └── android/
-            ├── AGENTS.md         Android 项目配置模板
-            ├── init.sh           环境检查脚本
-            ├── feature_list.json 功能列表
-            ├── progress.md       进度日志
-            └── DECISIONS.md      架构决策记录
 ```
 
 ## 快速导航
 
 | 我想... | 去看 |
 |---------|------|
+| 安装 Superpowers | superpowers/ |
+| 使用 OpenSpec 做规格驱动开发 | openspec/ |
+| 学习 Claude Code | claude-code/ |
+| 节省 Claude Code Token | claude-code/save-tokens.md |
+| 配置 Claude Code 的 Skills/MCP/Hooks | claude-code/skills.md, mcp.md, hooks.md |
 | 学习 Ghostty 终端 | ghostty/ |
 | 查 Ghostty 快捷键 | ghostty/shortcuts.md |
-| 配置 Ghostty | ghostty/config-guide.md |
-| 了解三个工程是什么 | 01-overview/ |
-| 学习提示词工程 | 02-prompt-engineering/ |
-| 学习上下文工程 | 03-context-engineering/ |
-| 学习驾驭工程 | 04-harness-engineering/ |
-| 知道 AGENTS.md 怎么写 | 05-practical-tools/ |
-| 让 Hermes 更聪明 | 06-hermes-agent/README.md |
-| **让 Claude Code/Codex 理解我的项目** | **06-hermes-agent/flutter-android-harness-guide.md** |
-| **直接拿模板用** | **templates/flutter/ 或 templates/android/** |
-| 找文章和视频 | 07-references/ |
+| 了解 AI 工程三大演变 | ai-engineering/01-overview/ |
+| 让 AI Agent 理解我的项目 | ai-engineering/06-hermes-agent/flutter-android-harness-guide.md |
+| 拿模板直接用 | ai-engineering/templates/ |
 
 ## 核心公式
 
@@ -60,24 +59,8 @@ knowledge-base/
 弱模型 + 好上下文 + 好驾驭 ≈ 强模型 + 糟糕配置
 ```
 
-## 快速开始（5 分钟）
-
-```bash
-# 1. 复制模板到你的 Flutter 项目
-cp ~/knowledge-base/ai-engineering/templates/flutter/* /path/to/your/flutter/project/
-
-# 2. 复制模板到你的 Android 项目
-cp ~/knowledge-base/ai-engineering/templates/android/* /path/to/your/android/project/
-
-# 3. 编辑 AGENTS.md，填入你项目的实际信息
-
-# 4. 运行 init.sh 确认环境正常
-cd /path/to/your/project && ./init.sh
-```
-
 ## 使用方式
 
 - 每个文件夹都有 README.md，直接阅读即可
-- 遇到新的知识，告诉我"保存到知识库"
-- 定期回顾和更新
-- 模板可以直接复制到项目中使用
+- 遇到新的知识，告诉我"更新知识库"
+- 所有内容都有引用来源，确保可溯源
