@@ -1,6 +1,10 @@
 # Claude Code Hooks 自动化
 
-> 来源：Anthropic 官方文档，Sakasegawa 博客
+> 来源：Anthropic 官方文档 (code.claude.com/docs/en/hooks)
+>       Pixelmojo "Claude Code Hooks: All 12 Events"
+>       claudefast "Claude Code Hooks: Complete Guide"
+> 更新时间：2026年5月
+> 验证状态：已核查
 
 ## 什么是 Hooks？
 
@@ -20,24 +24,134 @@ Hooks 是在 Claude Code 特定操作前后自动执行的命令。
 {
   "hooks": {
     "PreToolUse": [...],
-    "PostToolUse": [...],
-    "PreCommit": [...]
+    "PostToolUse": [...]
   }
 }
 ```
 
-## Hook 类型
-
-### PreToolUse
-在工具执行前触发。
-
-### PostToolUse
-在工具执行后触发。
-
-### PreCommit
-在 git commit 前触发。
-
 > 来源：Anthropic 官方文档
+
+
+══════════════════════════════════════════════
+  全部 12 个 Hook 事件
+══════════════════════════════════════════════
+
+Claude Code 支持 12 个生命周期 Hook 事件：
+
+```
+事件名称              触发时机                    可阻止？
+─────────────────── ─────────────────────────── ────────
+UserPromptSubmit     用户提交消息时              YES
+PreToolUse           工具执行前                  YES
+PostToolUse          工具执行后                  YES
+PostToolUseFailure   工具执行失败后              YES
+PermissionRequest    权限请求对话框出现时        YES
+PermissionDenied     权限被拒绝时                NO
+Notification         通知发送时                  NO
+Stop                 Agent 停止前                YES
+SubagentStop         子代理停止前                YES
+PreCompact           上下文压缩前                YES
+SessionStart         会话开始时                  NO
+SessionEnd           会话结束时                  NO
+```
+
+> 来源：claudefast.com, "Claude Code Hooks: Complete Guide to All 12 Lifecycle Events"
+>       GitHub disler/claude-code-hooks-mastery
+
+
+══════════════════════════════════════════════
+  最常用的 Hook 事件
+══════════════════════════════════════════════
+
+### PreToolUse — 工具执行前
+
+在 Claude 执行任何工具（Bash、Edit、Write 等）之前触发。
+可以允许、阻止或修改操作。
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "write|edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'About to modify a file'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### PostToolUse — 工具执行后
+
+在工具执行后触发。可以提供反馈给 Claude。
+
+```json
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "write|edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "dart analyze --no-fatal-infos"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### Stop — Agent 停止前
+
+在 Agent 准备停止响应之前触发。
+可以强制执行最终检查。
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "flutter test"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+### SessionStart — 会话开始时
+
+在新会话开始时触发。可以设置环境。
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Welcome back!'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+> 来源：Anthropic 官方文档 (code.claude.com/docs/en/hooks)
 
 
 ══════════════════════════════════════════════
@@ -66,12 +180,12 @@ Hooks 是在 Claude Code 特定操作前后自动执行的命令。
 
 效果：每次 Claude 写完文件 → 自动运行 dart analyze → 发现问题立即修复。
 
-### 自动测试（提交前）
+### 自动测试（Agent 停止前）
 
 ```json
 {
   "hooks": {
-    "PreCommit": [
+    "Stop": [
       {
         "hooks": [
           {
@@ -105,7 +219,27 @@ Hooks 是在 Claude Code 特定操作前后自动执行的命令。
 }
 ```
 
-> 来源：Sakasegawa, "Harness Engineering Best Practices for Claude Code / Codex Users"
+### 阻止危险命令
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "check_dangerous_command.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+> 来源：Pixelmojo, "Claude Code Hooks: All 12 Events with Examples"
 
 
 ══════════════════════════════════════════════
@@ -144,20 +278,37 @@ matcher 值：
 4. 测试 Hook
    先手动运行命令确认正常，
    再配置为 Hook。
+
+5. 使用 matcher 精确匹配
+   不要用 * 匹配所有操作，
+   只匹配需要的操作类型。
+
+6. 共享配置
+   将 .claude/settings.json 提交到 git，
+   团队共享 Hooks 配置。
 ```
 
-> 来源：Anthropic 官方文档，社区实践
+> 来源：Anthropic 官方文档，AY Automate "10 Best Claude Code Hooks"
 
 
 ══════════════════════════════════════════════
   参考来源
 ══════════════════════════════════════════════
 
-[1] Anthropic 官方文档 — Hooks
-    https://docs.anthropic.com/en/docs/claude-code/hooks
+[1] Anthropic 官方文档 — Hooks Reference
+    https://code.claude.com/docs/en/hooks
 
-[2] Sakasegawa, "Harness Engineering Best Practices for Claude Code / Codex Users"
+[2] Pixelmojo, "Claude Code Hooks: All 12 Events with Examples (2026)"
+    https://www.pixelmojo.io/blogs/claude-code-hooks-production-quality-ci-cd-patterns
+
+[3] claudefast, "Claude Code Hooks: Complete Guide to All 12 Lifecycle Events"
+    https://claudefa.st/blog/tools/hooks/hooks-guide
+
+[4] AY Automate, "10 Best Claude Code Hooks to Add in 2026"
+    https://www.ayautomate.com/blog/best-claude-code-hooks
+
+[5] GitHub disler/claude-code-hooks-mastery
+    https://github.com/disler/claude-code-hooks-mastery
+
+[6] Sakasegawa, "Harness Engineering Best Practices for Claude Code / Codex Users"
     https://nyosegawa.com/en/posts/harness-engineering-best-practices-2026/
-
-[3] Martin Fowler, "Harness engineering for coding agent users"
-    https://martinfowler.com/articles/harness-engineering.html

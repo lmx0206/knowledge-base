@@ -4,10 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A Chinese-language knowledge base maintained by mason, covering AI engineering practices and development tools. Two top-level sections:
+A Chinese-language knowledge base maintained by mason, covering AI engineering practices and development tools. Five top-level sections:
 
 - **ai-engineering/** — Three paradigms: Prompt Engineering (2022-2024), Context Engineering (2025), Harness Engineering (2026). Practical focus on configuring AI coding agents for mobile development (Android/Flutter/iOS) on macOS.
+- **claude-code/** — Claude Code usage guide: CLAUDE.md writing, hooks, MCP servers, skills, token optimization, tips.
 - **ghostty/** — Ghostty terminal emulator usage guide, config, shortcuts, tips.
+- **openspec/** — OpenSpec specification reference.
+- **superpowers/** — Superpowers framework reference.
 
 There is no code, build system, or tooling. All content lives in Markdown files.
 
@@ -27,11 +30,23 @@ ai-engineering/
   templates/                       Ready-to-copy project templates
     flutter/                       AGENTS.md, init.sh, DECISIONS.md, feature_list.json, progress.md
     android/                       AGENTS.md, init.sh, DECISIONS.md, feature_list.json, progress.md
+claude-code/
+  README.md                        Claude Code overview
+  claude-md.md                     How to write CLAUDE.md
+  hooks.md                         Hooks configuration
+  mcp.md                           MCP server setup
+  skills.md                        Skills system
+  save-tokens.md                   Token optimization
+  tips-and-tricks.md               Tips and tricks
 ghostty/
   README.md                        Ghostty overview and quick start
   config-guide.md                  Configuration guide
   shortcuts.md                     Keyboard shortcuts reference
   tips-and-tricks.md               Tips and tricks
+openspec/
+  README.md                        OpenSpec specification reference
+superpowers/
+  README.md                        Superpowers framework reference
 ```
 
 Each subdirectory under `ai-engineering/01-` through `07-` contains exactly one `README.md`.

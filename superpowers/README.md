@@ -3,7 +3,7 @@
 > 创建时间：2026年5月
 > GitHub：https://github.com/obra/superpowers
 > 作者：Jesse Vincent（Prime Radiant）
-> Stars：179K+（截至 2026年5月）
+> Stars：176K+（截至 2026年5月，star-history.com 数据）
 > 许可证：MIT
 
 ## 什么是 Superpowers？
