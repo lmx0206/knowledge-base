@@ -4,10 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A Chinese-language knowledge base maintained by mason, covering AI engineering practices and development tools. Five top-level sections:
+A Chinese-language knowledge base maintained by mason, covering AI engineering practices and development tools. Six top-level sections:
 
 - **ai-engineering/** — Three paradigms: Prompt Engineering (2022-2024), Context Engineering (2025), Harness Engineering (2026). Practical focus on configuring AI coding agents for mobile development (Android/Flutter/iOS) on macOS.
 - **claude-code/** — Claude Code usage guide: CLAUDE.md writing, hooks, MCP servers, skills, token optimization, tips.
+- **cloud-deployment/** — Free cloud server deployment guide.
 - **ghostty/** — Ghostty terminal emulator usage guide, config, shortcuts, tips.
 - **openspec/** — OpenSpec specification reference.
 - **superpowers/** — Superpowers framework reference.
@@ -38,6 +39,8 @@ claude-code/
   skills.md                        Skills system
   save-tokens.md                   Token optimization
   tips-and-tricks.md               Tips and tricks
+cloud-deployment/
+  README.md                        Free cloud server deployment guide
 ghostty/
   README.md                        Ghostty overview and quick start
   config-guide.md                  Configuration guide
