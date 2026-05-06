@@ -33,6 +33,7 @@ Superpowers 是一个完整的 AI 编码 Agent 软件开发方法论，
 ### 谁创建了它？
 
 Jesse Vincent，连续创业者：
+
 - 1990s：创建 Request Tracker (RT)
 - 2005-2008：管理 Perl 6
 - 联合创办 Keyboardio（键盘公司）
@@ -124,12 +125,14 @@ Superpowers 强制执行一个结构化的开发流程：
 触发时机：在写任何代码之前
 
 硬性门槛：
+
 ```
 "在你提出设计并获得用户批准之前，
  不要调用任何实现技能、写任何代码、搭建任何项目。"
 ```
 
 Agent 会：
+
 1. 先探索项目上下文（读文件、文档、最近的 commit）
 2. 一次问一个澄清问题
 3. 提出 2-3 个方案及其权衡
@@ -170,6 +173,7 @@ Agent 会：
 ```
 
 经典 RED-GREEN-REFACTOR 循环：
+
 1. 写一个失败的测试
 2. 验证它确实失败了（且失败原因正确）
 3. 写最少的代码让测试通过
@@ -192,11 +196,13 @@ Agent 会：
 ```
 
 每个子代理：
+
 - 从全新上下文开始
 - 只接收任务描述和相关上下文
 - 不接收完整对话历史（防止上下文污染）
 
 两阶段审查：
+
 1. 规格合规性审查
 2. 代码质量审查
 
@@ -207,6 +213,7 @@ Agent 会：
 ### 阶段 5：Code Review（代码审查）
 
 在任务之间触发：
+
 - 派遣独立子代理审查完成的工作
 - 审查者获得精确的评估上下文
 - 按严重程度报告问题
@@ -217,6 +224,7 @@ Agent 会：
 ### 阶段 6：Finishing（完成）
 
 任务全部完成后：
+
 - 验证测试
 - 提供选项（合并/PR/保留/丢弃）
 - 清理工作树
@@ -227,13 +235,16 @@ Agent 会：
 ══════════════════════════════════════════════
 
 ### 测试类
+
 - test-driven-development — RED-GREEN-REFACTOR 循环
 
 ### 调试类
+
 - systematic-debugging — 4 阶段根因分析
 - verification-before-completion — 确认问题真的修复了
 
 ### 协作类
+
 - brainstorming — 苏格拉底式设计精炼
 - writing-plans — 详细实施计划
 - executing-plans — 批量执行 + 人工检查点
@@ -245,6 +256,7 @@ Agent 会：
 - subagent-driven-development — 快速迭代 + 两阶段审查
 
 ### 元技能
+
 - writing-skills — 创建新技能的最佳实践
 - using-superpowers — 技能系统介绍
 
@@ -288,6 +300,7 @@ Agent 会：
 ### chardet 项目案例
 
 使用 Superpowers 开发 chardet 7.0.0：
+
 - 速度提升 41 倍
 - 准确率 96.8%
 - 修复了数十个长期问题

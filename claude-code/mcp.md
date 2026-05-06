@@ -50,27 +50,32 @@ Claude Code + MCP = Claude 能访问：
 ## 常用 MCP 服务器
 
 ### 文件系统
+
 ```bash
 npx @modelcontextprotocol/server-filesystem /path/to/dir
 ```
 
 ### GitHub
+
 ```bash
 npx @modelcontextprotocol/server-github
 ```
 
 ### 浏览器（Playwright）
+
 ```bash
 npx @playwright/mcp
 ```
 
 ### 数据库
+
 ```bash
 npx @modelcontextprotocol/server-sqlite db.sqlite
 npx @modelcontextprotocol/server-postgres postgresql://...
 ```
 
 ### Sentry
+
 ```bash
 npx @modelcontextprotocol/server-sentry
 ```

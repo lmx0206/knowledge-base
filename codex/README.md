@@ -88,6 +88,7 @@ codex "explain this"     # 带初始提示启动
 ```
 
 TUI 基于 Ratatui 构建，支持：
+
 - 多轮对话
 - 代码高亮
 - 文件操作确认
@@ -150,6 +151,7 @@ Codex 既是 MCP 客户端，也是 MCP 服务器（实验性）。
 ### 6. 通知系统
 
 当 Agent 完成一轮工作时，可以配置桌面通知：
+
 - macOS：通过 terminal-notifier
 - WSL2：自动回退到 Windows 原生 Toast 通知
 

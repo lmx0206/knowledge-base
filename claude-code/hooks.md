@@ -1,8 +1,8 @@
 # Claude Code Hooks 自动化
 
 > 来源：Anthropic 官方文档 (code.claude.com/docs/en/hooks)
->       Pixelmojo "Claude Code Hooks: All 12 Events"
->       claudefast "Claude Code Hooks: Complete Guide"
+> Pixelmojo "Claude Code Hooks: All 12 Events"
+> claudefast "Claude Code Hooks: Complete Guide"
 > 更新时间：2026年5月
 > 验证状态：已核查
 
@@ -56,7 +56,7 @@ SessionEnd           会话结束时                  NO
 ```
 
 > 来源：claudefast.com, "Claude Code Hooks: Complete Guide to All 12 Lifecycle Events"
->       GitHub disler/claude-code-hooks-mastery
+> GitHub disler/claude-code-hooks-mastery
 
 
 ══════════════════════════════════════════════

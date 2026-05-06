@@ -11,26 +11,31 @@ Linux:   ~/.config/ghostty/config
 ```
 
 查看所有配置选项及默认值：
+
 ```bash
 ghostty +show-config --default --docs
 ```
 
 查看当前生效的配置：
+
 ```bash
 ghostty +show-config
 ```
 
 查看默认快捷键：
+
 ```bash
 ghostty +list-keybinds --default
 ```
 
 查看可用字体：
+
 ```bash
 ghostty +list-fonts
 ```
 
 查看可用主题：
+
 ```bash
 ghostty +list-themes
 ```
@@ -77,6 +82,7 @@ font-variation = wght=400
 ```
 
 查看可用字体：
+
 ```bash
 ghostty +list-fonts
 ```
@@ -98,11 +104,13 @@ dark-theme = catppuccin-mocha
 ```
 
 查看所有内置主题：
+
 ```bash
 ghostty +list-themes
 ```
 
 热门主题推荐：
+
 - catppuccin-mocha — 柔和的暗色主题
 - dracula — 经典紫色暗色主题
 - github-dark — GitHub 暗色风格
@@ -269,3 +277,9 @@ Ghostty 支持配置热重载，修改配置文件后：
 ```
 
 注意：部分配置（如 window-decoration）需要重启才能生效。
+
+## 参考来源
+
+- [Ghostty 官方文档 - 配置参考](https://ghostty.org/docs/config/reference)
+- [Ghostty GitHub 仓库](https://github.com/ghostty-org/ghostty)
+- [Ghostty 官方文档](https://ghostty.org/docs)

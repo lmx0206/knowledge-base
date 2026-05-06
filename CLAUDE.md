@@ -15,7 +15,26 @@ A Chinese-language knowledge base maintained by mason, covering AI engineering p
 - **openspec/** — OpenSpec specification reference.
 - **superpowers/** — Superpowers framework reference.
 
-There is no code, build system, or tooling. All content lives in Markdown files.
+There is no application code. All content lives in Markdown files. Tooling enforces quality via markdownlint, reference checks, and link validation.
+
+## Quality Checks
+
+```bash
+npm run lint          # Check markdown formatting
+npm run lint:fix      # Auto-fix formatting issues
+npm run check-refs    # Check all docs have 参考来源 section
+npm run check-links   # Check all URLs are reachable
+```
+
+**Pre-commit hook** runs markdownlint + reference check on staged `.md` files.
+
+**GitHub Actions CI** (`.github/workflows/markdown.yml`) runs on push/PR:
+
+- `lint` — markdownlint formatting check
+- `references` — 参考来源 section check
+- `links` — URL reachability check (PR + weekly schedule)
+
+Config files: `.markdownlint.json`, `.markdownlintignore`, `mlc_config.json`.
 
 ## Structure
 
@@ -80,6 +99,7 @@ Each subdirectory under `ai-engineering/01-` through `07-` contains exactly one 
 ## Content Standards
 
 Every document must:
+
 - Include a "参考来源" (References) section at the end with official docs or authoritative sources
 - Cite sources that are verifiable — data like GitHub stars, version numbers must be verified via web search
 - Version the knowledge base in `changelog.md` (semver-style: v1.0.0, v1.1.0, ...)
@@ -87,6 +107,7 @@ Every document must:
 ## Operational Workflow
 
 When making changes to this repo:
+
 1. Read `progress.md` and `changelog.md` first to understand recent updates
 2. Verify any factual claims (stars, version numbers, pricing) via web search before writing
 3. After changes: update `progress.md` with what was done, update `changelog.md` with version bump

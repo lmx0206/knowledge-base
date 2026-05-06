@@ -115,6 +115,7 @@ Cursor 团队发现：
 Anthropic 发现：模型无法可靠地评估自己的工作。
 
 解决方案：
+
 ```
 ┌──────────┐     ┌──────────┐
 │Generator │────>│Evaluator │
@@ -222,3 +223,12 @@ Martin Fowler 将驾驭分为三类：
 - Epsilla: "Why Harness Engineering Replaced Prompting in 2026"
 - OpenAI Codex 团队实验报告
 - Anthropic: "Building effective agents with long-running agents"
+
+## 参考来源
+
+- [Martin Fowler - Harness Engineering for Coding Agent Users](https://martinfowler.com/articles/harness-engineering.html)
+- [Mitchell Hashimoto - Engineer the Harness](https://mitchellh.com/writing/engineer-the-harness)
+- [Anthropic - Building Effective Agents](https://docs.anthropic.com/en/docs/build-with-claude/agents)
+- [OpenAI Codex CLI](https://github.com/openai/codex)
+- [Louis Bouchard - Harness Engineering: The Missing Layer Behind AI Agents](https://www.louisbouchard.ai/harness-engineering/)
+- [Epsilla - Why Harness Engineering Replaced Prompting in 2026](https://epsilla.com/blog/harness-engineering)

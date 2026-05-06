@@ -57,6 +57,7 @@ auxiliary:
 ```
 
 这样：
+
 - 日常对话 → mimo-v2.5-pro（免费/便宜）
 - 图像理解 → Gemini（擅长视觉）
 - 复杂压缩 → Claude（擅长总结）
@@ -218,7 +219,18 @@ hermes cron create "0 18 * * 5" -q "总结本周的 Git 提交记录，生成开
 ## 下一步行动
 
 告诉我你最想先做哪一步：
+
 1. "帮我写 AGENTS.md" — 我帮你为项目生成规则文件
 2. "帮我配置辅助模型" — 我引导你设置多模型策略
 3. "帮我积累技能" — 告诉我你常做的任务，我帮你写成技能
 4. "帮我设置定时任务" — 告诉我你想自动化什么
+
+## 参考来源
+
+- [Mitchell Hashimoto - Engineer the Harness](https://mitchellh.com/writing/engineer-the-harness)
+- [Martin Fowler - Harness Engineering for Coding Agent Users](https://martinfowler.com/articles/harness-engineering.html)
+- [Anthropic - Building Effective Agents](https://docs.anthropic.com/en/docs/build-with-claude/agents)
+- [OpenAI Codex CLI](https://github.com/openai/codex)
+- [Builder.io - Improve Your AI Code Output with AGENTS.md](https://www.builder.io/blog/agents-md)
+- [Gemini CLI](https://github.com/google-gemini/gemini-cli)
+- [JetBrains Mono Font](https://www.jetbrains.com/mono/)

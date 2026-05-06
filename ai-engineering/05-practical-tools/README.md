@@ -157,3 +157,11 @@ app/
 - Cursor: "Best practices for coding with agents"
 - YouTube: "How I Write My AGENTS.md Files - Best Practices"
 - Anthropic: "Effective context engineering for AI agents"
+
+## 参考来源
+
+- [Builder.io - Improve Your AI Code Output with AGENTS.md](https://www.builder.io/blog/agents-md)
+- [Cursor - Best Practices for Coding with Agents](https://docs.cursor.com/context/rules)
+- [Anthropic - Effective Context Engineering for AI Agents](https://docs.anthropic.com/en/docs/build-with-claude/context-engineering)
+- [GitHub Copilot Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-repository-custom-instructions-for-github-copilot)
+- [Windsurf Rules](https://docs.windsurf.com/windsurf/memories-and-rules)

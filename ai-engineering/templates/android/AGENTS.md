@@ -1,9 +1,11 @@
 # [项目名称]
 
 ## 项目概述
+
 [一句话描述你的 Android 应用]
 
 ## 技术栈
+
 - 语言：Kotlin 2.x
 - UI：Jetpack Compose + Material 3
 - 架构：MVVM + Clean Architecture
@@ -35,12 +37,14 @@ app/
 ```
 
 ## 开始工作前
+
 1. `./gradlew assembleDebug`
 2. `./gradlew test`
 3. 阅读 progress.md 了解上次进度
 4. 阅读 feature_list.json 了解当前状态
 
 ## 硬约束
+
 1. Kotlin only，不要用 Java
 2. 使用 StateFlow 而非 LiveData
 3. 使用 Material 3 组件
@@ -51,6 +55,7 @@ app/
 8. 使用 Hilt 注入所有依赖
 
 ## 命令
+
 ```bash
 ./gradlew assembleDebug              # 构建 Debug APK
 ./gradlew test                       # 运行单元测试
@@ -60,6 +65,7 @@ app/
 ```
 
 ## 代码规范
+
 - Kotlin 官方代码风格
 - Compose 函数：PascalCase + 描述性命名
 - 使用 Material 3 颜色和排版
@@ -67,12 +73,14 @@ app/
 - 异步用 suspend + withContext(Dispatchers.IO)
 
 ## 验证清单（完成任务前必须通过）
+
 - [ ] ./gradlew test 全部通过
 - [ ] ./gradlew lint 零警告
 - [ ] ./gradlew assembleDebug 编译成功
 - [ ] 功能在模拟器上验证
 
 ## 已知坑
+
 - Room 迁移必须写 Migration，否则数据丢失
 - Compose 版本与 Kotlin 版本有兼容矩阵
 - Hilt 多模块需要额外 @InstallIn 配置

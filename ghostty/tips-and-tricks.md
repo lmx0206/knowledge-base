@@ -42,6 +42,7 @@ keybind = ctrl+f=write_scrollback_file:open
 ```
 
 使用方式：
+
 ```bash
 # 复制到配置文件
 cat > ~/.config/ghostty/config << 'EOF'
@@ -58,11 +59,13 @@ Cmd + Shift + ,
 ══════════════════════════════════════════════
 
 Quick Terminal 是 Ghostty 最实用的功能之一：
+
 - 从屏幕顶部滑出，类似 Quake 游戏的控制台
 - 全局快捷键，在任何应用中都能呼出
 - 状态保持，隐藏后再次打开显示同样的内容
 
 配置：
+
 ```bash
 keybind = global:cmd+backquote=toggle_quick_terminal
 quick-terminal-position = top
@@ -72,6 +75,7 @@ quick-terminal-size = 0.5
 使用：按 Cmd + `（反引号，在 Tab 键上方）呼出/隐藏
 
 注意事项：
+
 - 需要在 macOS 系统偏好设置中授予 Ghostty 辅助功能权限
 - 路径：系统偏好设置 → 隐私与安全性 → 辅助功能
 
@@ -103,6 +107,7 @@ quick-terminal-size = 0.5
 ```
 
 使用场景：
+
 - 左边写代码，右边运行命令
 - 上面看日志，下面调试
 - 多个终端同时监控不同服务
@@ -128,6 +133,7 @@ zsh 用户通常自动启用。如果没有生效，确保你的 .zshrc 中没�
 Ghostty 目前不内置搜索功能。替代方案：
 
 方案 A：导出 scrollback 到文件（推荐）
+
 ```bash
 # 快捷键：Cmd + Shift + J（粘贴路径）
 # 快捷键：Cmd + Shift + Option + J（用编辑器打开）
@@ -137,6 +143,7 @@ keybind = ctrl+f=write_scrollback_file:open
 ```
 
 方案 B：使用 tmux 搜索
+
 ```bash
 # 进入 tmux 复制模式
 Ctrl+B 然后 [
@@ -147,6 +154,7 @@ q
 ```
 
 方案 C：使用 grep 管道
+
 ```bash
 # 运行命令并搜索输出
 your_command | grep "search_term"
@@ -171,6 +179,7 @@ Cmd + Shift + ,
 ```
 
 推荐主题（适合开发）：
+
 - catppuccin-mocha — 柔和护眼
 - dracula — 经典紫色
 - github-dark — GitHub 风格
@@ -184,11 +193,13 @@ Cmd + Shift + ,
 ══════════════════════════════════════════════
 
 虽然 Ghostty 原生支持分屏和标签页，但 tmux 提供了更多功能：
+
 - 会话持久化（断开后可恢复）
 - 更强大的窗口管理
 - 跨 SSH 会话保持
 
 推荐用法：
+
 - Ghostty 负责：渲染、字体、主题、Quick Terminal
 - tmux 负责：会话管理、持久化、远程工作
 
@@ -284,4 +295,10 @@ ghostty +list-fonts            # 列出可用字体
 ghostty +list-themes           # 列出可用主题
 ghostty +version               # 显示版本
 ghostty +help                  # 显示帮助
+
+## 参考来源
+
+- [Ghostty 官方文档](https://ghostty.org/docs)
+- [Ghostty GitHub 仓库](https://github.com/ghostty-org/ghostty)
+- [Ghostty 配置参考](https://ghostty.org/docs/config/reference)
 ```

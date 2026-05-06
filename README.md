@@ -66,14 +66,14 @@ knowledge-base/
 | 节省 Claude Code Token | claude-code/save-tokens.md |
 | 配置 Claude Code 的 Skills/MCP/Hooks | claude-code/skills.md, mcp.md, hooks.md |
 | 学习 Ghostty 终端 | ghostty/ |
-|| 查 Ghostty 快捷键 | ghostty/shortcuts.md |
-|| 学习 Codex CLI | codex/ |
-|| 节省 Codex Token | codex/save-tokens.md |
-|| 学习 Gemini CLI | gemini-cli/ |
-|| 节省 Gemini Token | gemini-cli/save-tokens.md |
-|| 三大工具对比 | ai-comparison/ |
-|| 如何组合使用 AI 工具 | ai-comparison/README.md |
-|| 了解 AI 工程三大演变 | ai-engineering/01-overview/ |
+| 查 Ghostty 快捷键 | ghostty/shortcuts.md |
+| 学习 Codex CLI | codex/ |
+| 节省 Codex Token | codex/save-tokens.md |
+| 学习 Gemini CLI | gemini-cli/ |
+| 节省 Gemini Token | gemini-cli/save-tokens.md |
+| 三大工具对比 | ai-comparison/ |
+| 如何组合使用 AI 工具 | ai-comparison/README.md |
+| 了解 AI 工程三大演变 | ai-engineering/01-overview/ |
 | 让 AI Agent 理解我的项目 | ai-engineering/06-hermes-agent/flutter-android-harness-guide.md |
 | 拿模板直接用 | ai-engineering/templates/ |
 

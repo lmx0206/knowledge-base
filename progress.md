@@ -2,7 +2,27 @@
 
 ## 最近更新
 
+### 2026-05-06 — 补全 Harness Engineering 三大质量门禁
+
+- 新增：`scripts/check-references.sh` — 引用来源自动检查脚本
+- 新增：`.github/workflows/markdown.yml` — GitHub Actions CI（lint + references + links）
+- 新增：`mlc_config.json` — markdown-link-check 配置
+- 新增：`npm run check-refs` / `npm run check-links` 脚本
+- 更新：pre-commit hook 追加引用来源检查
+- 更新：CLAUDE.md Quality Checks 章节补充新命令和 CI 说明
+- 依赖：新增 markdown-link-check ^3.14.2
+
+### 2026-05-06 — 新增 markdownlint 质量检查
+
+- 新增：markdownlint 配置（`.markdownlint.json` + `.markdownlintignore`）
+- 新增：pre-commit hook，提交时自动检查 `.md` 文件
+- 新增：`npm run lint` / `npm run lint:fix` 脚本
+- 修复：全库 Markdown 格式问题（空行、表格等）
+- 修复：README.md 导航表多余的 `|` 字符
+- 更新：CLAUDE.md 新增 Quality Checks 章节
+
 ### 2026-05-06 — 新增 Codex CLI + Gemini CLI + 三大工具对比
+
 - 新增：codex/ — Codex CLI 完整指南（6 个文件）
   - README.md：总览、安装、认证、核心特性、沙箱、配置
   - skills.md：技能系统 + Superpowers 集成
@@ -22,6 +42,7 @@
 - 状态：内容基于官方文档和 GitHub 仓库验证
 
 ### 2026-05-05 — 新增云部署指南 + 第二轮审查
+
 - 新增：cloud-deployment/ — 免费云服务器部署 Hermes Agent 指南
   - Google AI Pro 福利说明
   - Oracle Cloud Always Free 完整指南
@@ -34,6 +55,7 @@
 - 状态：所有内容已验证
 
 ### 2026-05-05 — 审查与修正
+
 - 完成：全库内容准确性审查
 - 修正：Superpowers stars 从 179K → 176K（star-history.com 数据）
 - 修正：Claude Code hooks 从 3 种 → 12+ 种（官方文档）
@@ -43,6 +65,7 @@
 - 状态：所有内容已验证
 
 ### 2026-05-05 — 初始创建
+
 - 创建 Superpowers 技能框架指南
 - 创建 OpenSpec 规格驱动开发指南
 - 创建 Claude Code 完整指南（7 个文件）
@@ -52,6 +75,7 @@
 - 推送到 GitHub
 
 ## 待办
+
 - [ ] 定期检查 stars 数据是否过时
 
 - [ ] mason 注册 Oracle Cloud 后更新实际体验

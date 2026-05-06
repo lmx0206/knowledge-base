@@ -55,6 +55,7 @@ OpenSpec 方式（SDD）：
 ══════════════════════════════════════════════
 
 ### 前提条件
+
 - Node.js 20.19.0 或更高版本
 
 ### 安装步骤
@@ -81,6 +82,7 @@ openspec update
 ### 支持的工具
 
 OpenSpec 支持 25+ 个 AI 工具：
+
 - Claude Code
 - Codex CLI / Codex App
 - Gemini CLI
@@ -105,6 +107,7 @@ OpenSpec 支持 25+ 个 AI 工具：
 ```
 
 AI 会生成：
+
 ```
 openspec/changes/add-dark-mode/
 ├── proposal.md    ← 为什么做、改什么
@@ -122,6 +125,7 @@ openspec/changes/add-dark-mode/
 ```
 
 AI 按照 tasks.md 中的清单逐项实现：
+
 ```
 ✓ 1.1 Add theme context provider
 ✓ 1.2 Create toggle component
@@ -137,6 +141,7 @@ All tasks complete!
 ```
 
 完成的变更归档：
+
 ```
 openspec/changes/archive/2025-01-23-add-dark-mode/
 ```
@@ -162,6 +167,7 @@ openspec/changes/archive/2025-01-23-add-dark-mode/
 ```
 
 选择扩展配置：
+
 ```bash
 openspec config profile
 openspec update

@@ -15,3 +15,7 @@
 # Claude Code local settings
 .claude/settings.local.json
 CLAUDE.local.md
+
+# Node (markdownlint tooling)
+node_modules/
+package-lock.json

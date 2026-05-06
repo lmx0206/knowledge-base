@@ -93,3 +93,11 @@
 - OpenAI GPT-4.1 Prompting Guide
 - Anthropic Claude Prompt Engineering Guide
 - Prompt Engineering Guide (promptingguide.ai)
+
+## 参考来源
+
+- [OpenAI GPT-4.1 Prompting Guide](https://platform.openai.com/docs/guides/prompt-engineering)
+- [Anthropic Claude Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering)
+- [Prompt Engineering Guide](https://www.promptingguide.ai/)
+- [OpenAI Cookbook](https://cookbook.openai.com/)
+- [Chain-of-Thought Prompting (Wei et al., 2022)](https://arxiv.org/abs/2201.11903)

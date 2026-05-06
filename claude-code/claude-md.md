@@ -5,6 +5,7 @@
 ## 什么是 CLAUDE.md？
 
 CLAUDE.md 是 Claude Code 的项目配置文件，类似于：
+
 - Codex 的 AGENTS.md
 - Cursor 的 .cursorrules
 - GitHub Copilot 的 .github/copilot-instructions.md
@@ -93,15 +94,18 @@ dart format .
 ```
 
 ## 硬约束
+
 1. domain 层不依赖外部包
 2. 状态管理只用 Riverpod
 3. 每个 feature 必须有测试
 4. dart analyze 零警告才能提交
 
 ## 常见坑
+
 - build_runner 生成后需手动运行
 - go_router redirect 容易死循环
 - iOS 构建需先 cd ios && pod install
+
 ```
 
 
@@ -129,6 +133,7 @@ dart format .
 ```
 
 ## 硬约束
+
 1. Kotlin only，不用 Java
 2. 使用 StateFlow 而非 LiveData
 3. 使用 Material 3
@@ -136,9 +141,11 @@ dart format .
 5. lint 零警告才能提交
 
 ## 架构约束
+
 - data 层不能引用 presentation 层
 - domain 层不能依赖 Android 框架
 - ViewModel 不能直接访问 DataSource
+
 ```
 
 
@@ -147,6 +154,7 @@ dart format .
 ══════════════════════════════════════════════
 
 ```
+
 1. 保持简短（50-200 行）
    太长会占用上下文窗口，降低效果。
 
@@ -164,6 +172,7 @@ dart format .
 
 6. 不要写 Claude 能自己查到的
    浪费上下文窗口。
+
 ```
 
 > 来源：Builder.io "50 Claude Code Tips"，Anthropic 官方文档

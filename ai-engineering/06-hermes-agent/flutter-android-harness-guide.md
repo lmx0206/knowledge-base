@@ -15,6 +15,7 @@ Agent = Model + Harness
 ```
 
 真实数据：
+
 - 一个 TypeScript 项目：裸仓库 20% 成功率 → 完整 Harness 100%
 - 一个 FastAPI 项目：加 AGENTS.md 前 3 次全失败 → 加了后 3 次全成功
 - 上下文效率提升约 60%
@@ -52,6 +53,7 @@ Agent = Model + Harness
 ```
 
 投资回报率排序（从高到低）：
+
 ```
 1. 验证系统（测试 + lint）— ROI 最高，投入最低
 2. 指令系统（AGENTS.md）— 立竿见影
@@ -119,12 +121,15 @@ flutter pub get
 flutter run
 flutter test
 ```
+
 # 结构
+
 - lib/ 是代码目录
 - test/ 是测试目录
 
 → 问题：没有架构约束、没有工作流程、没有验证步骤
    Agent 能自己发现这些信息，不需要你写
+
 ```
 
 ---
@@ -151,6 +156,7 @@ flutter test
 ## 架构：Feature-First Clean Architecture
 
 ```
+
 lib/
 ├── core/                  # 全局共享
 │   ├── config/            # 环境配置
@@ -176,6 +182,7 @@ lib/
 │   ├── home/
 │   └── settings/
 └── main.dart
+
 ```
 
 ## 代码规范
@@ -276,6 +283,7 @@ lib/
 
 ## 模块结构
 ```
+
 app/                    # 主模块
 ├── src/main/
 │   ├── java/com/example/app/
@@ -295,6 +303,7 @@ app/                    # 主模块
 feature-auth/           # 认证功能模块（可选多模块）
 feature-home/           # 首页功能模块
 core/                   # 共享核心模块
+
 ```
 
 ## 命令
@@ -531,6 +540,7 @@ Session 2 开始时：
 ```
 
 关键指标：新会话达到可工作状态的时间
+
 - 好的 Harness：约 3 分钟
 - 差的 Harness：15-20 分钟
 

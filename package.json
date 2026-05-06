@@ -1,0 +1,28 @@
+{
+  "name": "knowledge-base",
+  "version": "1.0.0",
+  "description": "> 创建时间：2026年5月 > 维护者：Hermes Agent (mimo-v2.5-pro) > GitHub：https://github.com/lmx0206/knowledge-base",
+  "main": "index.js",
+  "scripts": {
+    "lint": "markdownlint-cli \"**/*.md\"",
+    "lint:fix": "markdownlint-cli --fix \"**/*.md\"",
+    "check-refs": "bash scripts/check-references.sh",
+    "check-links": "markdown-link-check -q -c mlc_config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmx0206/knowledge-base.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lmx0206/knowledge-base/issues"
+  },
+  "homepage": "https://github.com/lmx0206/knowledge-base#readme",
+  "devDependencies": {
+    "markdown-link-check": "^3.14.2",
+    "markdownlint-cli": "^0.48.0"
+  }
+}

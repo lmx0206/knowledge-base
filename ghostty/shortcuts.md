@@ -131,6 +131,7 @@
   配置后：Cmd + `（反引号）可在任何应用中呼出/隐藏终端
 
   特点：
+
   - 全局快捷键，即使 Ghostty 不在前台也能使用
   - 状态保持，隐藏后再次打开显示同样的内容
   - 同一时间只能有一个 Quick Terminal
@@ -142,6 +143,7 @@
   Ghostty 目前不内置搜索功能（截至 1.3.x）。
 
   替代方案：
+
   1. 使用 Cmd + K 清屏前，用 Cmd + Shift + J 导出 scrollback
      然后在文本编辑器中搜索
 
@@ -195,6 +197,7 @@
   keybind = ctrl+f=write_scrollback_file:open
 
   触发器前缀：
+
   - global:    全局快捷键（即使不在前台也生效，仅 macOS）
   - all:       对所有终端面板生效
   - unconsumed: 不消费输入（同时发送给子进程）
@@ -202,3 +205,9 @@
 
   示例（全局 Quick Terminal）：
   keybind = global:cmd+backquote=toggle_quick_terminal
+
+## 参考来源
+
+- [Ghostty 官方文档 - 快捷键](https://ghostty.org/docs/config/keybind)
+- [Ghostty GitHub 仓库](https://github.com/ghostty-org/ghostty)
+- [Ghostty 官方文档](https://ghostty.org/docs)

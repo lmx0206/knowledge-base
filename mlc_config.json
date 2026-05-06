@@ -1,0 +1,19 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^#" },
+    { "pattern": "^mailto:" },
+    { "pattern": "^file://" },
+    { "pattern": "example\\.com" }
+  ],
+  "httpHeaders": [
+    {
+      "urls": ["https://github.com/", "https://docs.github.com/"],
+      "headers": { "Accept-Encoding": "zstd, br, gzip, deflate" }
+    }
+  ],
+  "timeout": "20s",
+  "retryOn429": true,
+  "retryCount": 5,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206, 301, 302]
+}

@@ -1,9 +1,11 @@
 # [项目名称]
 
 ## 项目概述
+
 [一句话描述你的 Flutter 应用]
 
 ## 技术栈
+
 - Flutter 3.x + Dart 3.x
 - 状态管理：Riverpod 2.x
 - 路由：go_router
@@ -35,6 +37,7 @@ lib/
 ```
 
 ## 开始工作前
+
 1. `flutter pub get`
 2. `dart run build_runner build --delete-conflicting-outputs`
 3. `flutter test`
@@ -42,6 +45,7 @@ lib/
 5. 阅读 feature_list.json 了解当前状态
 
 ## 硬约束
+
 1. domain 层不能依赖任何外部包（只用 Dart 核心库）
 2. 所有 API 响应用 freezed 定义 Model
 3. 状态管理只用 Riverpod，不用 setState
@@ -52,6 +56,7 @@ lib/
 8. 异步用 async/await，不用 .then()
 
 ## 命令
+
 ```bash
 flutter pub get                           # 安装依赖
 dart run build_runner build --delete-conflicting-outputs  # 代码生成
@@ -64,6 +69,7 @@ flutter build ios --release               # 构建 iOS
 ```
 
 ## 代码规范
+
 - 文件名：snake_case.dart
 - 类名：PascalCase
 - 变量/函数：camelCase
@@ -72,12 +78,14 @@ flutter build ios --release               # 构建 iOS
 - Compose 风格的小 Widget 优先
 
 ## 验证清单（完成任务前必须通过）
+
 - [ ] flutter test 全部通过
 - [ ] dart analyze 零警告
 - [ ] dart format . 无变化
 - [ ] 功能在模拟器上验证
 
 ## 已知坑
+
 - build_runner 生成文件后需要手动运行
 - go_router 的 redirect 逻辑容易死循环
 - Riverpod 的 autoDispose 要注意生命周期

@@ -126,6 +126,7 @@ gemini skills uninstall <name>   # 卸载
 ### 什么是 Extensions？
 
 Extensions 是更大的功能包，可以包含：
+
 - 提示词（Prompts）
 - MCP 服务器
 - 自定义命令

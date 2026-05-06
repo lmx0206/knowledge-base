@@ -25,4 +25,10 @@ ghostty/
 ├── shortcuts.md           ← 完整快捷键参考
 ├── config-guide.md        ← 配置文件详解
 └── tips-and-tricks.md     ← 技巧与进阶用法
+
+## 参考来源
+
+- [Ghostty 官方文档](https://ghostty.org/docs)
+- [Ghostty GitHub 仓库](https://github.com/ghostty-org/ghostty)
+- [Ghostty 配置参考](https://ghostty.org/docs/config/reference)
 ```
