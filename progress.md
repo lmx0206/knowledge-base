@@ -2,6 +2,11 @@
 
 ## 最近更新
 
+### 2026-05-06 — 升级 GitHub Actions 版本
+
+- 修复：actions/checkout v4 → v5（node24 runtime，消除弃用警告）
+- 修复：markdownlint-cli2-action v19 → v23（node24 runtime，消除弃用警告）
+
 ### 2026-05-06 — 补全 Harness Engineering 三大质量门禁
 
 - 新增：`scripts/check-references.sh` — 引用来源自动检查脚本

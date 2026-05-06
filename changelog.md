@@ -1,5 +1,12 @@
 # 知识库更新日志
 
+## v1.4.1 — 2026-05-06（CI 依赖升级）
+
+### 修复
+
+- `actions/checkout` v4 → v5（node24 runtime，消除弃用警告）
+- `markdownlint-cli2-action` v19 → v23（node24 runtime，消除弃用警告）
+
 ## v1.4.0 — 2026-05-06（Harness 质量门禁补全）
 
 ### 新增
