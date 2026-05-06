@@ -2,6 +2,25 @@
 
 ## 最近更新
 
+### 2026-05-06 — 新增 Codex CLI + Gemini CLI + 三大工具对比
+- 新增：codex/ — Codex CLI 完整指南（6 个文件）
+  - README.md：总览、安装、认证、核心特性、沙箱、配置
+  - skills.md：技能系统 + Superpowers 集成
+  - mcp.md：MCP 客户端 + 服务器模式
+  - hooks.md：通知 Hook + 沙箱安全 + CI/CD 集成
+  - save-tokens.md：定价 + 7 种节省策略
+  - tips-and-tricks.md：TUI 快捷键 + exec 脚本化 + 日志调试
+- 新增：gemini-cli/ — Gemini CLI 完整指南（5 个文件）
+  - README.md：总览、安装、认证、核心特性、免费额度
+  - skills.md：Agent Skills + Extensions 双系统
+  - mcp.md：MCP 服务器配置 + 资源引用
+  - save-tokens.md：定价 + Token Caching + 8 种节省策略
+  - tips-and-tricks.md：搜索能力 + 多模态 + Hooks + GitHub Action
+- 新增：ai-comparison/ — 三大工具对比与组合使用
+  - README.md：差异对比 + 场景选择 + 4 种组合策略 + 成本对比
+- 更新：根 README.md 导航表
+- 状态：内容基于官方文档和 GitHub 仓库验证
+
 ### 2026-05-05 — 新增云部署指南 + 第二轮审查
 - 新增：cloud-deployment/ — 免费云服务器部署 Hermes Agent 指南
   - Google AI Pro 福利说明
@@ -34,6 +53,5 @@
 
 ## 待办
 - [ ] 定期检查 stars 数据是否过时
-- [ ] 补充 Codex 使用指南
-- [ ] 补充 Gemini CLI 使用指南
+
 - [ ] mason 注册 Oracle Cloud 后更新实际体验

@@ -1,5 +1,33 @@
 # 知识库更新日志
 
+## v1.3.0 — 2026-05-06（Codex + Gemini + 对比指南）
+
+### 新增
+- codex/ — Codex CLI 完整指南（6 个文件）
+  - 总览、安装、认证、核心特性（Rust/TUI/沙箱/exec/MCP）
+  - 技能系统 + Superpowers 集成
+  - MCP 客户端 + 服务器模式
+  - 通知 Hook + 沙箱安全 + CI/CD 集成
+  - 定价 + 7 种节省 Token 策略
+  - TUI 快捷键 + exec 脚本化 + 日志调试
+- gemini-cli/ — Gemini CLI 完整指南（5 个文件）
+  - 总览、安装、认证、核心特性（免费/搜索/多模态/Checkpoint）
+  - Agent Skills + Extensions 双系统
+  - MCP 服务器配置 + 资源引用
+  - 定价 + Token Caching + 8 种节省策略
+  - 搜索能力 + 多模态 + Hooks + GitHub Action
+- ai-comparison/ — 三大工具对比与组合使用
+  - Claude Code vs Codex CLI vs Gemini CLI 全面对比
+  - 场景选择指南
+  - 4 种组合使用策略
+  - 成本对比分析
+  - 跨工具上下文共享方案
+
+### 验证
+- 所有内容基于官方文档和 GitHub 仓库
+- 安装命令、配置格式、功能特性已核实
+- 价格信息来自官方定价页面
+
 ## v1.2.0 — 2026-05-05（云部署指南）
 
 ### 新增

@@ -27,6 +27,21 @@ knowledge-base/
 │   ├── shortcuts.md         完整快捷键参考（macOS）
 │   ├── config-guide.md      配置文件详解
 │   └── tips-and-tricks.md   技巧与进阶用法
+├── codex/                 ← Codex CLI 完整指南
+│   ├── README.md            总览与目录
+│   ├── skills.md            技能系统（Superpowers）
+│   ├── mcp.md               MCP 服务器集成
+│   ├── hooks.md             Hooks 与自动化
+│   ├── save-tokens.md       节省 Token 策略
+│   └── tips-and-tricks.md   技巧与最佳实践
+├── gemini-cli/            ← Gemini CLI 完整指南
+│   ├── README.md            总览与目录
+│   ├── skills.md            技能系统（Skills + Extensions）
+│   ├── mcp.md               MCP 服务器集成
+│   ├── save-tokens.md       节省 Token 策略
+│   └── tips-and-tricks.md   技巧与最佳实践
+├── ai-comparison/         ← 三大工具对比与组合使用
+│   └── README.md            差异对比 + 场景选择 + 组合策略
 └── ai-engineering/          ← AI 工程三大演变
     ├── 01-overview/          总览
     ├── 02-prompt-engineering/ 提示词工程
@@ -51,8 +66,14 @@ knowledge-base/
 | 节省 Claude Code Token | claude-code/save-tokens.md |
 | 配置 Claude Code 的 Skills/MCP/Hooks | claude-code/skills.md, mcp.md, hooks.md |
 | 学习 Ghostty 终端 | ghostty/ |
-| 查 Ghostty 快捷键 | ghostty/shortcuts.md |
-| 了解 AI 工程三大演变 | ai-engineering/01-overview/ |
+|| 查 Ghostty 快捷键 | ghostty/shortcuts.md |
+|| 学习 Codex CLI | codex/ |
+|| 节省 Codex Token | codex/save-tokens.md |
+|| 学习 Gemini CLI | gemini-cli/ |
+|| 节省 Gemini Token | gemini-cli/save-tokens.md |
+|| 三大工具对比 | ai-comparison/ |
+|| 如何组合使用 AI 工具 | ai-comparison/README.md |
+|| 了解 AI 工程三大演变 | ai-engineering/01-overview/ |
 | 让 AI Agent 理解我的项目 | ai-engineering/06-hermes-agent/flutter-android-harness-guide.md |
 | 拿模板直接用 | ai-engineering/templates/ |
 
