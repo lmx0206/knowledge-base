@@ -7,7 +7,8 @@
     "lint": "markdownlint-cli \"**/*.md\"",
     "lint:fix": "markdownlint-cli --fix \"**/*.md\"",
     "check-refs": "bash scripts/check-references.sh",
-    "check-links": "markdown-link-check -q -c mlc_config.json"
+    "check-links": "markdown-link-check -q -c mlc_config.json",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/lmx0206/knowledge-base#readme",
   "devDependencies": {
+    "husky": "^9.1.7",
     "markdown-link-check": "^3.14.2",
     "markdownlint-cli": "^0.48.0"
   }

@@ -26,7 +26,7 @@ npm run check-refs    # Check all docs have 参考来源 section
 npm run check-links   # Check all URLs are reachable
 ```
 
-**Pre-commit hook** runs markdownlint + reference check on staged `.md` files.
+**Pre-commit hook** (Husky) runs markdownlint + reference check on staged `.md` files. `npm install` 时自动安装。
 
 **GitHub Actions CI** (`.github/workflows/markdown.yml`) runs on push/PR:
 

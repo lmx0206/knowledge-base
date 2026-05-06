@@ -1,0 +1,36 @@
+#!/bin/sh
+# Pre-commit hook: markdownlint + 引用来源检查
+
+# Get staged markdown files
+STAGED_MD=$(git diff --cached --name-only --diff-filter=ACM | grep '\.md$' || true)
+
+if [ -z "$STAGED_MD" ]; then
+  exit 0
+fi
+
+# Step 1: markdownlint
+echo "Running markdownlint on staged files..."
+npx markdownlint-cli $STAGED_MD
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ markdownlint failed. Fix errors or run 'npm run lint:fix' to auto-fix."
+  echo "   To skip this check: git commit --no-verify"
+  exit 1
+fi
+
+echo "✅ markdownlint passed"
+
+# Step 2: 引用来源检查
+echo ""
+echo "Checking references..."
+bash scripts/check-references.sh
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Reference check failed."
+  echo "   To skip this check: git commit --no-verify"
+  exit 1
+fi
+
+echo "✅ All pre-commit checks passed"

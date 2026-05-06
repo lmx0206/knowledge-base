@@ -2,6 +2,12 @@
 
 ## 最近更新
 
+### 2026-05-06 — 迁移 pre-commit hook 到 Husky
+
+- 修复：pre-commit hook 从 .git/hooks/ 迁移到 .husky/（可被 git 跟踪）
+- 新增：husky ^9.1.7 依赖
+- 效果：其他开发者 npm install 后自动获得 pre-commit hook
+
 ### 2026-05-06 — 升级 GitHub Actions 版本
 
 - 修复：actions/checkout v4 → v5（node24 runtime，消除弃用警告）
