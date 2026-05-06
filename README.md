@@ -88,3 +88,18 @@ knowledge-base/
 - 每个文件夹都有 README.md，直接阅读即可
 - 遇到新的知识，告诉我"更新知识库"
 - 所有内容都有引用来源，确保可溯源
+
+## 开发环境
+
+```bash
+git clone https://github.com/lmx0206/knowledge-base.git
+cd knowledge-base
+npm install          # 安装依赖 + 自动启用 pre-commit hook
+```
+
+`npm install` 会通过 Husky 自动安装 pre-commit hook，提交时会检查：
+
+- Markdown 格式（markdownlint）
+- 引用来源章节是否存在
+
+跳过检查：`git commit --no-verify`
