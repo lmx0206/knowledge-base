@@ -1,5 +1,27 @@
 # 知识库更新日志
 
+## v1.5.0 — 2026-05-11（大型 Android Agent Harness）
+
+### 新增
+
+- `ai-engineering/04-harness-engineering/android-agent-harness.md`
+  - 大型多模块 Android 项目的 Agent Harness 搭建方法
+  - module map、utility index、coding style、testing guide、change context routing
+  - Android 多模块项目的 AGENTS.md 模板
+  - Harness 五子系统在 Android 项目中的落地方式
+
+### 更新
+
+- `ai-engineering/04-harness-engineering/README.md`
+  - 修正 OpenAI Codex Harness 实验数据表述
+  - 增加大型 Android Harness 专文入口
+- 根 `README.md` 快速导航新增 Android Agent Harness 入口
+
+### 验证
+
+- 数据来源已通过联网验证
+- 引用来源包含 OpenAI、Android Developers、Kotlin、Gradle 官方文档
+
 ## v1.4.1 — 2026-05-06（Husky + CI 依赖升级）
 
 ### 修复

@@ -74,6 +74,7 @@ knowledge-base/
 | 三大工具对比 | ai-comparison/ |
 | 如何组合使用 AI 工具 | ai-comparison/README.md |
 | 了解 AI 工程三大演变 | ai-engineering/01-overview/ |
+| 搭建大型 Android Agent Harness | ai-engineering/04-harness-engineering/android-agent-harness.md |
 | 让 AI Agent 理解我的项目 | ai-engineering/06-hermes-agent/flutter-android-harness-guide.md |
 | 拿模板直接用 | ai-engineering/templates/ |
 

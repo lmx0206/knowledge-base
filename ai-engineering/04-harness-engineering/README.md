@@ -128,14 +128,16 @@ Anthropic 发现：模型无法可靠地评估自己的工作。
 
 ## 实际案例：OpenAI Codex 团队的经验
 
-他们用 GPT-5 从零构建了一个生产级应用，5个月经验总结：
+OpenAI 公开文章记录了一个 Codex Harness 实验：团队从空仓库开始，约五个月后形成约一百万行代码、约 1,500 个 PR；早期由 3 名工程师驱动，之后团队增长到 7 人。重点不是“把所有代码交给模型一次性生成”，而是把仓库知识、工具、验证、日志、review loop 都设计成 Agent 能直接使用的系统。
+
+5 个月经验总结：
 
 ```
 规则 1: 仓库是 Agent 的唯一真相来源
         不假设任何外部知识
 
 规则 2: 代码必须对 Agent 可读，不只是对人可读
-        清晰结构 + 详细注释
+        清晰结构 + repo-local 文档
 
 规则 3: 架构约束用 linter 强制，不用 prompt 要求
         不是"请遵守规则"，而是"系统让你无法违反规则"
@@ -145,6 +147,22 @@ Anthropic 发现：模型无法可靠地评估自己的工作。
 
 规则 5: 如果 PR 需要大量人工干预，Agent 不是问题，Harness 才是
 ```
+
+## 大型 Android 项目的 Harness
+
+大型多模块 Android 项目不能依赖 Agent 一次性读取每行代码，而要让 Agent 能快速定位“应该读哪几行代码”：
+
+```text
+AGENTS.md                         # 入口地图
+ARCHITECTURE.md                   # 架构总览
+docs/android/module-map.md        # 模块职责和依赖方向
+docs/android/utility-index.md     # 工具类和公共抽象索引
+docs/android/coding-style.md      # 编码规范和可执行检查
+docs/android/testing-guide.md     # 按改动类型选择验证命令
+docs/generated/dependency-graph.md # 自动生成的模块依赖图
+```
+
+详见：[大型 Android 项目的 Agent Harness 搭建指南](./android-agent-harness.md)。
 
 ## 实际案例：Stripe 的做法
 
@@ -229,6 +247,9 @@ Martin Fowler 将驾驭分为三类：
 - [Martin Fowler - Harness Engineering for Coding Agent Users](https://martinfowler.com/articles/harness-engineering.html)
 - [Mitchell Hashimoto - Engineer the Harness](https://mitchellh.com/writing/engineer-the-harness)
 - [Anthropic - Building Effective Agents](https://docs.anthropic.com/en/docs/build-with-claude/agents)
+- [OpenAI - Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
 - [OpenAI Codex CLI](https://github.com/openai/codex)
+- [Android Developers - Guide to app architecture](https://developer.android.com/topic/architecture)
+- [Gradle Documentation - Multi-Project Builds](https://docs.gradle.org/current/userguide/multi_project_builds.html)
 - [Louis Bouchard - Harness Engineering: The Missing Layer Behind AI Agents](https://www.louisbouchard.ai/harness-engineering/)
 - [Epsilla - Why Harness Engineering Replaced Prompting in 2026](https://epsilla.com/blog/harness-engineering)

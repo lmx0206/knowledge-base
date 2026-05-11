@@ -2,6 +2,17 @@
 
 ## 最近更新
 
+### 2026-05-11 — 新增大型 Android Agent Harness 指南
+
+- 新增：`ai-engineering/04-harness-engineering/android-agent-harness.md`
+  - 说明大型多模块 Android 项目不应追求一次性读取每行代码，而应建立可导航、可验证、可约束的 Harness
+  - 补充 module map、utility index、coding style、testing guide、change context routing、AGENTS.md 模板
+  - 引用 OpenAI Harness Engineering、Android Architecture、Android Kotlin Style、Kotlin Coding Conventions、Gradle Multi-Project Builds
+- 更新：`ai-engineering/04-harness-engineering/README.md`
+  - 修正 OpenAI Codex 团队公开数据表述：约五个月、约一百万行代码、约 1,500 个 PR、早期 3 名工程师后增长到 7 人
+  - 增加大型 Android Harness 入口
+- 更新：根 `README.md` 快速导航
+
 ### 2026-05-06 — 迁移 pre-commit hook 到 Husky
 
 - 修复：pre-commit hook 从 .git/hooks/ 迁移到 .husky/（可被 git 跟踪）
