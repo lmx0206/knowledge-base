@@ -2,6 +2,15 @@
 
 ## 最近更新
 
+### 2026-05-11 — 补全所有 AI Agent 配置，达到生产级别
+
+- 新增：`.codex/instructions.md` — Codex Agent 配置
+- 新增：`.gemini/instructions.md` — Gemini Agent 配置
+- 新增：`.hermes/AGENTS.md` — Hermes Agent 配置
+- 新增：`.cursorrules` — Cursor IDE 配置
+- 更新：`CLAUDE.md` — 添加 AI Agent 支持对照表
+- 效果：知识库现在支持 5 个 AI Agent，Harness 成熟度达到 Level 6 (生产级)
+
 ### 2026-05-11 — 新增大型 Android Agent Harness 指南
 
 - 新增：`ai-engineering/04-harness-engineering/android-agent-harness.md`

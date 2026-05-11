@@ -1,5 +1,31 @@
 # 知识库更新日志
 
+## v1.6.0 — 2026-05-11（生产级别 Harness 补全）
+
+### 新增
+
+- `.codex/instructions.md` — Codex Agent 配置
+- `.gemini/instructions.md` — Gemini Agent 配置
+- `.hermes/AGENTS.md` — Hermes Agent 配置
+- `.cursorrules` — Cursor IDE 配置
+- `HARNESS_EVALUATION.md` — Harness 工程评估报告
+
+### 更新
+
+- `CLAUDE.md` — 添加 AI Agent 支持对照表
+
+### 效果
+
+- 知识库现在支持 5 个 AI Agent（Claude Code / Codex / Hermes / Gemini / Cursor）
+- 所有 Agent 共享相同的硬约束和验证流程
+- Harness 成熟度达到 Level 6 (生产级)
+
+### 验证
+
+- 所有配置文件格式正确
+- 硬约束一致
+- 验证命令统一
+
 ## v1.5.0 — 2026-05-11（大型 Android Agent Harness）
 
 ### 新增

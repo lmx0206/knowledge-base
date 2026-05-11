@@ -100,9 +100,11 @@ Each subdirectory under `ai-engineering/01-` through `07-` contains exactly one 
 
 Every document must:
 
-- Include a "参考来源" (References) section at the end with official docs or authoritative sources
-- Cite sources that are verifiable — data like GitHub stars, version numbers must be verified via web search
-- Version the knowledge base in `changelog.md` (semver-style: v1.0.0, v1.1.0, ...)
+- **引用来源** — Include a "参考来源" (References) section at the end with official docs or authoritative sources
+- **来源权威** — Cite sources that are verifiable — data like GitHub stars, version numbers must be verified via web search
+- **数据验证** — Version the knowledge base in `changelog.md` (semver-style: v1.0.0, v1.1.0, ...)
+- **参考来源** — Every document must end with a "参考来源" section
+- **语言规范** — All content is written in Simplified Chinese (中文撰写); technical terms stay in English
 
 ## Operational Workflow
 
@@ -112,3 +114,17 @@ When making changes to this repo:
 2. Verify any factual claims (stars, version numbers, pricing) via web search before writing
 3. After changes: update `progress.md` with what was done, update `changelog.md` with version bump
 4. Commit and push
+
+## AI Agent Support
+
+This project supports 5 AI Agents, each with independent configuration:
+
+| Agent | Configuration File | Description |
+|-------|-------------------|-------------|
+| **Claude Code** | `CLAUDE.md` + `.claude/` | Primary development agent |
+| **Codex** | `AGENTS.md` + `.codex/instructions.md` | OpenAI's agent |
+| **Hermes** | `AGENTS.md` + `.hermes/AGENTS.md` | Local agent |
+| **Gemini** | `AGENTS.md` + `.gemini/instructions.md` | Google's agent |
+| **Cursor** | `.cursorrules` | IDE built-in agent |
+
+All agents share the same hard constraints and verification workflow, ensuring consistent code quality.

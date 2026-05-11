@@ -1,17 +1,22 @@
-# 知识库 AGENTS.md — Agent 操作手册
+# Gemini 配置 — mason 的 AI 知识库
 
-> 这是知识库本身的 Harness 配置
-> 遵循 Harness Engineering 5 个子系统
+> 这是 Google Gemini CLI 的配置文件
+> Gemini 启动时会自动读取本文件
 
 ## 项目概述
 
 mason 的 AI 知识库 — 包含 AI 工程、工具使用、最佳实践的结构化文档。
 
+- 语言: 中文（技术术语保留英文）
+- 类型: 文档库（无应用代码）
+- GitHub: https://github.com/lmx0206/knowledge-base
+
 ## 开始工作前
 
-1. 阅读 progress.md 了解上次更新内容
-2. 阅读 changelog.md 了解版本历史
-3. 检查 git log --oneline -5 了解最近改动
+1. 阅读 `AGENTS.md` 了解硬约束
+2. 阅读 `progress.md` 了解上次更新内容
+3. 阅读 `changelog.md` 了解版本历史
+4. 检查 `git log --oneline -5` 了解最近改动
 
 ## 硬约束（不可违反）
 
@@ -29,13 +34,6 @@ mason 的 AI 知识库 — 包含 AI 工程、工具使用、最佳实践的结�
 ├── 子主题1.md         ← 可选的子文档
 └── 子主题2.md         ← 可选的子文档
 ```
-
-## 验证清单（每次更新前必须通过）
-
-- [ ] 所有数据已联网验证（stars、版本号等）
-- [ ] 所有引用来源可访问
-- [ ] 内容与官方文档一致
-- [ ] 包含"参考来源"章节
 
 ## 验证命令
 
@@ -58,12 +56,29 @@ npm run check-links
 1. 联网搜索最新信息
 2. 与现有内容对比
 3. 修正过时或错误信息
-4. 更新 progress.md
-5. 更新 changelog.md
-6. git commit + push
+4. 运行 `npm run lint` 检查格式
+5. 运行 `npm run check-refs` 检查引用
+6. 更新 `progress.md`
+7. 更新 `changelog.md`
+8. git commit + push
 
 ## 已知规范
 
 - Stars 数据来源：star-history.com 或 GitHub 页面
 - 版本号来源：GitHub releases
 - 安装命令来源：官方 README
+
+## 目录结构
+
+```
+knowledge-base/
+├── ai-engineering/        # AI 工程三大演变
+├── claude-code/           # Claude Code 使用指南
+├── codex/                 # Codex CLI 使用指南
+├── gemini-cli/            # Gemini CLI 使用指南
+├── ghostty/               # Ghostty 终端配置
+├── cloud-deployment/      # 云服务器部署
+├── openspec/              # OpenSpec 规范
+├── superpowers/           # Superpowers 框架
+└── ai-comparison/         # AI 工具对比
+```
