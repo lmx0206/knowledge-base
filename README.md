@@ -48,6 +48,7 @@ knowledge-base/
     ├── 01-overview/          总览
     ├── 02-prompt-engineering/ 提示词工程
     ├── 03-context-engineering/ 上下文工程
+    ├── 08-multi-agent-workflow/  多 Agent 协作工作流（Claude+Codex+Superpowers）
     ├── 04-harness-engineering/ 驾驭工程
     ├── 05-practical-tools/    实用工具与配置
     ├── 06-hermes-agent/       Hermes + Flutter/Android 指南
@@ -80,6 +81,7 @@ knowledge-base/
 | 让 AI Agent 理解我的项目 | ai-engineering/06-hermes-agent/flutter-android-harness-guide.md |
 | 拿模板直接用 | ai-engineering/templates/ |
 | 监控 Claude Code 会话 | claude-hud/ |
+| Claude + Codex + Superpowers 多 Agent 协作 | ai-engineering/08-multi-agent-workflow/ |
 
 ## 核心公式
 

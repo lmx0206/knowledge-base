@@ -2,6 +2,16 @@
 
 ## 最近更新
 
+### 2026-05-12 — 新增多 Agent 协作工作流指南
+
+- 新增：`ai-engineering/08-multi-agent-workflow/` — Claude Code + Codex Desktop + Superpowers 协作工作流
+  - `README.md` — 文档导航
+  - `gpt-original.md` — GPT-5 原始回答
+  - `claude-original.md` — Claude Opus 4.7 原始回答
+  - `analysis-and-summary.md` — 对比分析 + 合并工作流总结
+- 综合两份 AI 回答的共同点与差异，提炼最佳实践
+- 包含完整的 CLAUDE.md/AGENTS.md 模板、五阶段工作流、Flutter→Android 映射表
+
 ### 2026-05-12 — 新增 Claude HUD 监控工具指南
 
 - 新增：`claude-hud/README.md` — Claude Code 实时监控仪表盘

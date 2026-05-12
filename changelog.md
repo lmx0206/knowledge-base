@@ -1,5 +1,24 @@
 # 知识库更新日志
 
+## v1.8.0 — 2026-05-12（多 Agent 协作工作流指南）
+
+### 新增
+
+- `ai-engineering/08-multi-agent-workflow/README.md` — 文档导航
+- `ai-engineering/08-multi-agent-workflow/gpt-original.md` — GPT-5 原始回答
+- `ai-engineering/08-multi-agent-workflow/claude-original.md` — Claude Opus 4.7 原始回答
+- `ai-engineering/08-multi-agent-workflow/analysis-and-summary.md` — 对比分析 + 合并工作流
+
+### 内容要点
+
+- 6 个核心共识点（仓库文件同步、角色分工、双配置、Superpowers、小任务、不让 Agent 独干）
+- 8 个关键差异（文档结构、Symlink、Delta 机制、技术栈、每日节奏、迁移坑、Session、MCP）
+- 合并后的最佳实践：仓库结构、CLAUDE.md 模板、五阶段工作流、每日节奏、Flutter→Android 映射、质量验收清单
+
+### 验证
+
+- 引用来源：Anthropic 官方文档、OpenAI 官方文档、GitHub Superpowers 仓库
+
 ## v1.7.0 — 2026-05-12（Claude HUD 监控工具指南）
 
 ### 新增
