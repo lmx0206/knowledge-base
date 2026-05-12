@@ -2,6 +2,18 @@
 
 ## 最近更新
 
+### 2026-05-12 — 新增 Claude HUD 监控工具指南
+
+- 新增：`claude-hud/README.md` — Claude Code 实时监控仪表盘
+  - 项目简介、核心功能、技术栈
+  - 安装与使用方法
+  - 项目结构与核心架构（数据流图）
+  - 关键组件说明（ClaudeSessionManager、CostCalculator、ToolRegistry）
+  - 费用模型定价（Sonnet/Haiku/Opus）
+  - 与 Hermes Agent 对比
+  - 当前限制与适用场景
+- 更新：根 `README.md` 导航表新增 Claude HUD 入口
+
 ### 2026-05-11 — 补全所有 AI Agent 配置，达到生产级别
 
 - 新增：`.codex/instructions.md` — Codex Agent 配置

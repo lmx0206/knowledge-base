@@ -42,6 +42,8 @@ knowledge-base/
 │   └── tips-and-tricks.md   技巧与最佳实践
 ├── ai-comparison/         ← 三大工具对比与组合使用
 │   └── README.md            差异对比 + 场景选择 + 组合策略
+├── claude-hud/            ← Claude Code 实时监控仪表盘
+│   └── README.md            安装、架构、核心组件、使用方法
 └── ai-engineering/          ← AI 工程三大演变
     ├── 01-overview/          总览
     ├── 02-prompt-engineering/ 提示词工程
@@ -77,6 +79,7 @@ knowledge-base/
 | 搭建大型 Android Agent Harness | ai-engineering/04-harness-engineering/android-agent-harness.md |
 | 让 AI Agent 理解我的项目 | ai-engineering/06-hermes-agent/flutter-android-harness-guide.md |
 | 拿模板直接用 | ai-engineering/templates/ |
+| 监控 Claude Code 会话 | claude-hud/ |
 
 ## 核心公式
 

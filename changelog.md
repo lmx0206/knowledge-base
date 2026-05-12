@@ -1,5 +1,31 @@
 # 知识库更新日志
 
+## v1.7.0 — 2026-05-12（Claude HUD 监控工具指南）
+
+### 新增
+
+- `claude-hud/README.md` — Claude Code 实时监控仪表盘完整指南
+  - 项目简介与核心功能（8 项）
+  - 技术栈说明（Next.js 15 + React 19 + TypeScript + Tailwind CSS v4）
+  - 安装与使用方法
+  - 项目结构与核心架构（数据流图）
+  - 关键组件说明（ClaudeSessionManager、CostCalculator、ToolRegistry）
+  - 费用模型定价（Sonnet/Haiku/Opus 三种模型）
+  - 与 Hermes Agent 对比表
+  - 当前限制与适用场景
+
+### 更新
+
+- 根 `README.md` — 导航表新增 Claude HUD 入口
+- `progress.md` — 记录更新进度
+
+### 验证
+
+- GitHub Stars: 143（已验证）
+- 版本: 0.1.0（已验证）
+- 许可证: MIT（已验证）
+- 引用来源包含 GitHub 仓库、npm、Next.js 官方文档、Anthropic 官方文档
+
 ## v1.6.0 — 2026-05-11（生产级别 Harness 补全）
 
 ### 新增
