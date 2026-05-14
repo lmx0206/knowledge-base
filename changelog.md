@@ -1,5 +1,28 @@
 # 知识库更新日志
 
+## v1.9.0 — 2026-05-13（OpenSpec 文档大更新）
+
+### 修复
+
+- `openspec/README.md` — 基于 GitHub docs/commands.md 最新源码全面校正
+- 修正之前错误的命令描述（/opsx:continue 不是"继续未完成的变更"而是"逐个创建下一个 artifact"）
+
+### 新增
+
+- Profile 系统说明（core vs workflows 两套命令集）
+- 全部 11 个命令的详细文档（含参数、语法、示例、输出格式）
+- /opsx:explore 命令（探索与调研，core profile）
+- /opsx:sync 命令（同步 delta specs，core profile）
+- /opsx:verify 三维度验证说明（Completeness / Correctness / Coherence）
+- "暂停与继续"章节：明确无暂停命令，进度在 tasks.md checkbox 中
+- 4 种典型工作流示例（最简 / 逐步 / 快速 / 探索）
+- 故障排查章节（5 个常见问题及解决方案）
+- 各 AI 工具命令语法对照表（Claude Code / Cursor / Windsurf / Kimi 等）
+
+### 验证
+
+- 引用来源：GitHub Fission-AI/OpenSpec docs/commands.md（curl 实际获取验证）
+
 ## v1.8.0 — 2026-05-12（多 Agent 协作工作流指南）
 
 ### 新增

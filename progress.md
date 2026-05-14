@@ -127,8 +127,21 @@
 - 创建 Flutter/Android 项目模板
 - 推送到 GitHub
 
+### 2026-05-13 — OpenSpec 文档大更新
+
+- 重写 openspec/README.md，基于 GitHub docs/commands.md 最新源码校正
+- 新增 Profile 系统说明（core vs workflows）
+- 新增全部 11 个命令的详细文档（含参数、示例、输出）
+- 新增 /opsx:explore、/opsx:sync 命令说明（之前缺失）
+- 新增 /opsx:verify 三维度验证说明（Completeness/Correctness/Coherence）
+- 新增"暂停与继续"章节：明确无暂停命令，进度在 tasks.md checkbox 中
+- 新增 4 种典型工作流示例（最简/逐步/快速/探索）
+- 新增故障排查章节
+- 新增各 AI 工具命令语法对照表
+- 推送到 GitHub
+
+
 ## 待办
 
 - [ ] 定期检查 stars 数据是否过时
-
 - [ ] mason 注册 Oracle Cloud 后更新实际体验

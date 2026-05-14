@@ -27,24 +27,11 @@ OpenSpec 方式（SDD）：
 ### 核心理念
 
 ```
-"AI 编码助手很强大，但当需求只存在于聊天历史中时，
- 它们就变得不可预测。OpenSpec 添加了一个轻量级的规格层，
- 让你在写任何代码之前先达成一致。"
-                                    — OpenSpec 官方
-```
-
-### 为什么需要 OpenSpec？
-
-```
-没有 OpenSpec：
-  - 需求在聊天历史中，AI 记不住
-  - AI 猜你要什么，猜错了你才发现
-  - 每次新会话都要重新解释
-
-有 OpenSpec：
-  - 需求在文件中，AI 每次都能看到
-  - 先对齐规格，再写代码
-  - 有组织、可追踪、可迭代
+→ fluid not rigid（流动而非僵化）
+→ iterative not waterfall（迭代而非瀑布）
+→ easy not complex（简单而非复杂）
+→ built for brownfield not just greenfield（新旧项目都适用）
+→ scalable from personal projects to enterprises（个人到企业都可扩展）
 ```
 
 > 来源：GitHub Fission-AI/OpenSpec README
@@ -57,6 +44,7 @@ OpenSpec 方式（SDD）：
 ### 前提条件
 
 - Node.js 20.19.0 或更高版本
+- 支持 npm、pnpm、yarn、bun、nix
 
 ### 安装步骤
 
@@ -79,101 +67,293 @@ npm install -g @fission-ai/openspec@latest
 openspec update
 ```
 
-### 支持的工具
+### 支持的工具（25+）
 
-OpenSpec 支持 25+ 个 AI 工具：
+| 工具 | 命令语法 |
+|------|---------|
+| Claude Code | `/opsx:propose`、`/opsx:apply` |
+| Cursor | `/opsx-propose`、`/opsx-apply` |
+| Windsurf | `/opsx-propose`、`/opsx-apply` |
+| Copilot (IDE) | `/opsx-propose`、`/opsx-apply` |
+| Gemini CLI | 支持 |
+| Codex CLI / Codex App | 支持 |
+| VS Code | 支持 |
+| Kimi CLI | `/skill:openspec-propose`、`/skill:openspec-apply-change` |
+| Trae | `/openspec-propose`、`/openspec:apply-change` |
 
-- Claude Code
-- Codex CLI / Codex App
-- Gemini CLI
-- Cursor
-- GitHub Copilot
-- VS Code
-- 以及更多
-
-> 来源：GitHub README，docs/getting-started.md
-
-
-══════════════════════════════════════════════
-  核心工作流（3 步）
-══════════════════════════════════════════════
-
-### 步骤 1：Propose（提议）
-
-告诉 AI 你想做什么：
-
-```bash
-/opsx:propose add-dark-mode
-```
-
-AI 会生成：
-
-```
-openspec/changes/add-dark-mode/
-├── proposal.md    ← 为什么做、改什么
-├── specs/         ← 需求和场景
-├── design.md      ← 技术方案
-└── tasks.md       ← 实现清单
-```
-
-你审批这些文档。
-
-### 步骤 2：Apply（执行）
-
-```bash
-/opsx:apply
-```
-
-AI 按照 tasks.md 中的清单逐项实现：
-
-```
-✓ 1.1 Add theme context provider
-✓ 1.2 Create toggle component
-✓ 2.1 Add CSS variables
-✓ 2.2 Wire up localStorage
-All tasks complete!
-```
-
-### 步骤 3：Archive（归档）
-
-```bash
-/opsx:archive
-```
-
-完成的变更归档：
-
-```
-openspec/changes/archive/2025-01-23-add-dark-mode/
-```
-
-规格更新，准备下一个功能。
-
-> 来源：GitHub README
+> 来源：GitHub README，docs/supported-tools.md
 
 
 ══════════════════════════════════════════════
-  扩展工作流
+  Profile 系统（重要）
 ══════════════════════════════════════════════
 
-如果你需要更细粒度的控制：
+OpenSpec 有两套命令集，通过 Profile 切换：
+
+### 默认 Profile（core）
+
+安装后默认只有 5 个命令：
+
+| 命令 | 用途 |
+|------|------|
+| `/opsx:propose` | 创建变更 + 一次性生成所有规划文档 |
+| `/opsx:explore` | 探索想法、调研问题、澄清需求（不创建文档） |
+| `/opsx:apply` | 按 tasks.md 执行实现 |
+| `/opsx:sync` | 合并 delta specs 到主 specs（archive 会自动调用） |
+| `/opsx:archive` | 归档已完成的变更 |
+
+### 扩展 Profile（workflows）
+
+需要手动开启，多出 6 个命令：
 
 ```bash
-/opsx:new          # 创建新变更
-/opsx:continue     # 继续未完成的变更
-/opsx:ff           # 快进（跳过某些步骤）
-/opsx:verify       # 验证实现
-/opsx:bulk-archive # 批量归档
-/opsx:onboard      # 项目入门
+openspec config profile    # 交互式选择 workflows
+openspec update            # 重新生成 Agent 指令
 ```
 
-选择扩展配置：
+开启后新增命令：
+
+| 命令 | 用途 |
+|------|------|
+| `/opsx:new` | 创建变更骨架（只建目录 + .openspec.yaml） |
+| `/opsx:continue` | 逐个创建下一个 artifact（基于依赖图） |
+| `/opsx:ff` | 快进，一次性创建所有规划文档 |
+| `/opsx:verify` | 验证实现是否匹配文档（三维度检查） |
+| `/opsx:bulk-archive` | 批量归档多个变更 |
+| `/opsx:onboard` | 新手引导教程（15-30 分钟） |
+
+> 来源：GitHub docs/commands.md
+
+
+══════════════════════════════════════════════
+  命令详解
+══════════════════════════════════════════════
+
+### `/opsx:propose` — 创建变更（core 默认）
+
+```text
+/opsx:propose [change-name-or-description]
+```
+
+- 创建 `openspec/changes/<change-name>/`
+- 一次性生成 proposal.md、specs/、design.md、tasks.md
+- 停在准备好 `/opsx:apply` 的状态
+
+```
+You: /opsx:propose add-dark-mode
+AI:  Created openspec/changes/add-dark-mode/
+     ✓ proposal.md — why we're doing this, what's changing
+     ✓ specs/       — requirements and scenarios
+     ✓ design.md    — technical approach
+     ✓ tasks.md     — implementation checklist
+     Ready for implementation!
+```
+
+### `/opsx:explore` — 探索与调研（core）
+
+```text
+/opsx:explore [topic]
+```
+
+- 开放式对话，不创建任何 artifact
+- 可以调研代码库、比较方案、画图
+- 准备好后转入 `/opsx:propose` 或 `/opsx:new`
+
+### `/opsx:apply` — 执行实现（core）
+
+```text
+/opsx:apply [change-name]
+```
+
+- 读取 tasks.md，逐项实现
+- 写代码、创建文件、运行测试
+- 每完成一项标记 `[x]`
+- **中断后可恢复**：进度保存在 tasks.md 的 checkbox 中
+- **没有暂停命令**：直接关闭会话即可，下次 `/opsx:apply` 自动从断点继续
+
+```
+You: /opsx:apply
+AI:  Implementing tasks...
+     ✓ 1.1 Add theme context provider
+     ✓ 1.2 Create toggle component
+     ...
+     All tasks complete!
+```
+
+### `/opsx:sync` — 同步规格（core）
+
+```text
+/opsx:sync [change-name]
+```
+
+- 将变更中的 delta specs 合并到主 `openspec/specs/` 目录
+- 智能合并：追加场景到已有需求，不重复
+- archive 会自动提示是否需要 sync，通常不需要手动调用
+
+### `/opsx:archive` — 归档（core）
+
+```text
+/opsx:archive [change-name]
+```
+
+- 检查 artifact 完成状态
+- 检查任务完成情况（未完成会警告，但不阻止）
+- 提示同步 delta specs（如未同步）
+- 移动到 `openspec/changes/archive/YYYY-MM-DD-<name>/`
+
+### `/opsx:new` — 创建变更骨架（扩展）
+
+```text
+/opsx:new [change-name] [--schema <schema-name>]
+```
+
+- 只创建目录和 `.openspec.yaml` 元数据
+- 用 `/opsx:continue` 或 `/opsx:ff` 后续生成文档
+- 适合需要逐步控制的复杂变更
+
+### `/opsx:continue` — 逐个创建文档（扩展）
+
+```text
+/opsx:continue [change-name]
+```
+
+- 查询 artifact 依赖图
+- 创建第一个就绪的 artifact
+- 每次只创建一个，适合需要审查的场景
+
+```
+You: /opsx:continue
+AI:  Change: add-dark-mode
+     Artifact status:
+     ✓ proposal    (done)
+     ◆ specs       (ready)
+     ◆ design      (ready)
+     ○ tasks       (blocked - needs: specs)
+     Creating specs...
+     ✓ Created specs/ui/spec.md
+     Now available: tasks
+```
+
+### `/opsx:ff` — 快进（扩展）
+
+```text
+/opsx:ff [change-name]
+```
+
+- 一次性按依赖顺序创建所有规划文档
+- 比 `/opsx:continue` 更快，适合清晰的小中型功能
+
+### `/opsx:verify` — 验证实现（扩展）
+
+```text
+/opsx:verify [change-name]
+```
+
+验证三个维度：
+
+| 维度 | 验证内容 |
+|------|---------|
+| **Completeness** | 所有任务完成、需求覆盖、场景覆盖 |
+| **Correctness** | 实现匹配 spec 意图、边界情况处理 |
+| **Coherence** | 设计决策在代码中体现、模式一致 |
+
+输出级别：CRITICAL / WARNING / SUGGESTION
+**不阻止归档**，但暴露问题。
+
+```
+You: /opsx:verify
+AI:  Verifying add-dark-mode...
+     COMPLETENESS
+     ✓ All 8 tasks in tasks.md are checked
+     ✓ All requirements in specs have corresponding code
+     ⚠ Scenario "System preference detection" has no test coverage
+     CORRECTNESS
+     ✓ Implementation matches spec intent
+     ✓ Edge cases from scenarios are handled
+     COHERENCE
+     ✓ Design decisions reflected in code structure
+     ⚠ Design mentions "CSS variables" but uses Tailwind classes
+     SUMMARY
+     Critical issues: 0
+     Warnings: 2
+     Ready to archive: Yes (with warnings)
+```
+
+### `/opsx:bulk-archive` — 批量归档（扩展）
+
+```text
+/opsx:bulk-archive [change-names...]
+```
+
+- 列出所有已完成的变更
+- 检测 spec 冲突，按时间顺序归档
+- 冲突解决：检查代码库实际实现
+
+### `/opsx:onboard` — 新手引导（扩展）
+
+```text
+/opsx:onboard
+```
+
+- 交互式教程，使用你的真实代码库
+- 走完完整工作流：探索 → propose → specs → design → tasks → apply → verify → archive
+- 耗时 15-30 分钟
+
+
+══════════════════════════════════════════════
+  暂停与继续
+══════════════════════════════════════════════
+
+OpenSpec **没有暂停命令**。
+
+- 进度保存在 `tasks.md` 的 checkbox 中（`[x]` = 已完成）
+- 直接关闭会话 = "暂停"
+- 下次会话 `/opsx:apply` 自动从最后一个未勾选的 task 继续
+- 不需要任何恢复或 resume 操作
+
+
+══════════════════════════════════════════════
+  典型工作流
+══════════════════════════════════════════════
+
+### 最简流程（core profile）
 
 ```bash
-openspec config profile
-openspec update
+/opsx:propose add-feature    # 1. 创建变更 + 生成文档
+# 审批 proposal/specs/design/tasks
+/opsx:apply                  # 2. 执行实现
+/opsx:archive                # 3. 归档
 ```
 
-> 来源：GitHub README
+### 逐步控制流程（扩展 profile）
+
+```bash
+/opsx:new add-feature        # 1. 创建骨架
+/opsx:continue               # 2. 逐个生成文档，每个都审查
+/opsx:continue               #    ...直到所有文档就绪
+/opsx:apply                  # 3. 执行实现
+/opsx:verify                 # 4. 验证（三维度）
+/opsx:archive                # 5. 归档
+```
+
+### 快速流程（扩展 profile）
+
+```bash
+/opsx:new add-feature        # 1. 创建骨架
+/opsx:ff                     # 2. 快进生成所有文档
+/opsx:apply                  # 3. 执行实现
+/opsx:verify                 # 4. 验证
+/opsx:archive                # 5. 归档
+```
+
+### 探索流程（需求不明确时）
+
+```bash
+/opsx:explore 如何实现移动端认证？   # 1. 调研讨论
+/opsx:propose add-jwt-auth          # 2. 确定方向后创建变更
+/opsx:apply                         # 3. 执行
+/opsx:archive                       # 4. 归档
+```
 
 
 ══════════════════════════════════════════════
@@ -201,25 +381,30 @@ vs. 没有规格
   最佳实践
 ══════════════════════════════════════════════
 
-```
-1. 模型选择
-   OpenSpec 在高推理能力模型上效果最好。
-   推荐：Opus 4.5、GPT 5.2
+1. **模型选择** — OpenSpec 在高推理能力模型上效果最好。推荐：Opus 4.5、GPT 5.2
 
-2. 上下文卫生
-   开始实现前清空上下文窗口。
-   在整个会话中保持良好的上下文卫生。
+2. **上下文卫生** — 开始实现前清空上下文窗口。在整个会话中保持良好的上下文卫生。
 
-3. 先审批再实现
-   不要跳过 proposal 阶段。
-   花 5 分钟审批规格，节省 50 分钟返工。
+3. **先审批再实现** — 不要跳过 proposal 阶段。花 5 分钟审批规格，节省 50 分钟返工。
 
-4. 保持规格更新
-   代码变更后更新规格文档。
-   规格是活的文档，不是一次性产物。
-```
+4. **保持规格更新** — 代码变更后更新规格文档。规格是活的文档，不是一次性产物。
 
-> 来源：GitHub README，Medium 文章
+> 来源：GitHub README
+
+
+══════════════════════════════════════════════
+  故障排查
+══════════════════════════════════════════════
+
+| 问题 | 解决方案 |
+|------|---------|
+| "Change not found" | 指定变更名：`/opsx:apply add-dark-mode`；检查目录是否存在 |
+| "No artifacts ready" | 运行 `openspec status --change <name>` 查看阻塞原因 |
+| "Schema not found" | 运行 `openspec schemas` 查看可用 schema |
+| 命令不识别 | 运行 `openspec init` + `openspec update`；重启 AI 工具 |
+| 文档生成不正确 | 在 `openspec/config.yaml` 添加项目上下文；用 `/opsx:continue` 替代 `/opsx:ff` 获得更多控制 |
+
+> 来源：GitHub docs/commands.md
 
 
 ══════════════════════════════════════════════
@@ -230,20 +415,23 @@ vs. 没有规格
     https://github.com/Fission-AI/OpenSpec
     MIT License，45.3K+ stars（2026年5月）
 
-[2] OpenSpec 官方文档
+[2] OpenSpec 官方文档 — Commands 参考
+    https://github.com/Fission-AI/OpenSpec/blob/main/docs/commands.md
+
+[3] OpenSpec 官方网站
     https://openspec.dev
 
-[3] Y Combinator, "OpenSpec: The Spec Framework for Coding Agents"
+[4] Y Combinator, "OpenSpec: The Spec Framework for Coding Agents"
     https://www.ycombinator.com/launches/Pdc-openspec-the-spec-framework-for-coding-agents
 
-[4] GitHub Blog, "Spec-driven development with AI"
+[5] GitHub Blog, "Spec-driven development with AI"
     https://github.blog/ai-and-ml/generative-ai/spec-driven-development-with-ai-get-started-with-a-new-open-source-toolkit/
 
-[5] DEV.to, "How to make AI follow your instructions more for free (OpenSpec)"
+[6] DEV.to, "How to make AI follow your instructions more for free (OpenSpec)"
     https://dev.to/webdeveloperhyper/how-to-make-ai-follow-your-instructions-more-for-free-openspec-2c85
 
-[6] YouTube, "Getting Started with OpenSpec | Spec Driven Development"
+[7] YouTube, "Getting Started with OpenSpec | Spec Driven Development"
     https://www.youtube.com/watch?v=raPTOBUpc3M
 
-[7] YouTube, "OpenSpec Changes Everything - No More Vibe Coding"
+[8] YouTube, "OpenSpec Changes Everything - No More Vibe Coding"
     https://www.youtube.com/watch?v=5oUmpdpbejk
